@@ -37,3 +37,25 @@ updated criteria; `results.html` is from the original criteria.
 - **My own judgement:** I reviewed every comment and Clef's label myself for
   `MISTAKES.md` and `MISTAKES-v2.md`. The AI did not decide any labels; it only checked that
   the comment ids and Clef labels I wrote matched the results, and tidied the wording.
+
+## What I felt about doing this
+
+Most of the comments were easy to label. Clef's confidence scores were not always a good
+guide: many of the low-confidence (yellow) rows still had the right label.
+
+**Sarcasm.** Clef mostly fails to detect sarcasm. Sarcastic put-downs like "Truly
+groundbreaking research, Nobel prize loading 👏👏" were marked acceptable instead of toxic.
+
+**Keywords over context.** When a comment has links or words like promo, referral, free,
+workshop, internship or jobs, Clef tends to mark it as spam. The professor's post about a
+free AI workshop was marked spam, even though it only benefits the students. Clef does not
+consider who is posting or the full context of the text, which is why it put a professor's
+helpful post in spam and sarcastic messages in acceptable. (Note: my program only sent the
+comment and thread to Clef, not the author, so it had no way to know who was posting.
+Adding the author's role would be a good next step.)
+
+**The hardest cases** were comments where 75-80% of the post genuinely helps the community,
+but the last few lines push a promo code or referral link. These sit between acceptable and
+spam, so I marked them borderline, acknowledging the helpful part while noting the
+promotion. If I were fixing this on a real forum, I would remove or hide the referral part
+by default and keep only the helpful part of the post.
